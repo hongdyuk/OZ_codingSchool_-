@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>사용자 정보 입력받고 출력하기</title>
+    <style>
+        #name{
+            color: #003366;
+        }
+
+        #gender{
+            color: #336699;
+        }
+
+        #hobby{
+            color: #6699CC;
+        }
+
+        #song{
+            color: #99CCFF;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1 id="name"></h1>
+    <p id="gender"></p>
+    <p id="hobby"></p>
+    <p id="song"></p>
+
+    <script>
+        const nameElement = document.querySelector("#name");
+        let name = prompt("당신의 이름은 무엇입니까?")
+        nameElement.textContent = name
+
+        document.querySelector("#gender")
+        .textContent = `${name}님의 성별은 ${prompt(`${name}님의 성별는 무엇입니까?`)}이고`
+
+
+        document.querySelector("#hobby")
+        .textContent = `${name}님의 취미는 ${prompt(`${name}님의 취미는 무엇입니까?`)}이고`
+
+        document.querySelector("#song")
+        .textContent = `${name}님이 좋아하는 곡은 ${prompt(`${name}님이 좋아하는 곡은 무엇입니까?`)}입니다!`
+
+
+    </script>
+</body>
+</html>
