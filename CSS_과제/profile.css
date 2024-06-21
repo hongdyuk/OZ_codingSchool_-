@@ -1,0 +1,53 @@
+*{
+    text-align: center;
+    font-size: 16px;
+    font-family: "Sunflower", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
+html{
+    background-color: bisque;
+}
+
+body{
+    width: 640px;
+    margin: auto; /* 너비에서 남는 여백을 동일하게 분배 */
+}
+
+h1{
+    font-size: 48px;
+}
+
+img{
+    border-radius: 100px;
+    width: 200px;
+    height: 275px;
+}
+
+p{
+    font-size: 1.5rem;
+}
+
+.name{
+    font-size: 30px;
+    color: green;
+}
+
+h2{
+    font-size: 36px;
+}
+
+#mbti{
+    font-size: 24px;
+    color: blue;
+}
+
+#mark{
+    font-size: 24px;
+}
+
+.hobby{
+    line-height: 10px;
+    font-weight: 100;
+}
