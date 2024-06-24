@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>몬스터 잡기 게임</title>
+</head>
+<body>
+    
+    <div id="container"></div>
+
+    <script>
+        const start = confirm("게임을 시작하시겠습니까?")
+
+        if(start){
+            let monsterHP = 100
+            const container = document.getElementById("container")
+            const h1 = document.createElement("h1")
+            h1.textContent = "악당퇴치에 오신것을 환영합니다!"
+            container.appendChild(h1)
+
+            let attackDamage = parseInt(prompt("1회 공격시 피해량은?(양의 정수)"))
+            let attackCount = 0
+
+            if(attackDamage > 0){
+
+                while(monsterHP > 0){
+
+                    monsterHP -= attackDamage
+                    attackCount += 1
+
+                    const p = document.createElement("p")
+                    p.textContent = `악당에게 ${attackCount}회 피해를 주었습니다!!`
+                    container.appendChild(p)
+
+                    const strong = document.createElement("strong")
+                    strong.textContent = `악당의 남은 HP는 ${monsterHP > 0 ? monsterHP : 0}입니다!!`
+                    container.appendChild(strong)
+                    }
+                
+
+                const h2 = document.createElement("h2")
+                h2.textContent = "악당을 퇴치하여 마을을 구해주셨습니다!! 감사합니다!!"
+                h2.style.color = "red"
+
+
+            }else{
+                alert("피해량을 잘못 입력하여 게임을 종료합니다.")
+            }
+
+
+        }else{
+            alert("게임을 종료합니다. 감사합니다.")
+        }
+
+        
+    </script>
+</body>
+</html>
