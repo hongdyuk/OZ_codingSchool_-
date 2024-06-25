@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container mt-3">
+        <h3 class="mt-5 mb-3">신규 등록 상품</h3>
+        <button type="button" class="btn btn-outline-secondary mt-3" id="btnSignUp">
+            <a href="/join/join.html" class="signUp">회원가입</a>
+        </button>
+        <div class="form-check form-switch mt-3" id="dark">
+            <input class="form-check-input" type="checkbox" id="darkModeSwitch">
+            <label class="form-check-label" for="darkModeSwitch">다크 모드</label>
+        </div>
+        <div class="clock" id="clock"></div>
+        <form class="row row-cols-lg-auto g-3 align-items-center">      
+            <div class="col-12">
+                <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+                <select class="form-select" id="inlineFormSelectPref">
+                    <option selected>카테고리</option>
+                    <option value="1">상의</option>
+                    <option value="2">하의</option>
+                    <option value="3">신발</option>
+                    <option value="4">패션잡화</option>
+                </select>
+            </div>
+            <div class="col-3">
+                <div class="input-group flex-nowrap">
+                    <input type="text" class="form-control" placeholder="제품명을 입력해주세요." aria-label="Username" aria-describedby="addon-wrapping">
+                </div>
+            </div>
+            <div class="col-auto">
+                <button type="button" class="btn btn-outline-secondary">조회</button>
+            </div>
+            <div class="col-12 mt-3" id="gender">
+                <label class="visually-hidden" for="selectGender">성별</label>
+                <select class="form-select" id="selectGender">
+                    <option selected disabled hidden>성별</option>
+                    <option value="male">남성</option>
+                    <option value="female">여성</option>
+                    <option value="other">기타</option>
+                </select>
+            </div>
+            <div>
+                <button type="button" class="btn btn-outline-secondary" id="registration">상품등록</button>
+            </div>
+        </form>
+        <div class="container mt-3">
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <th>카테고리</th>
+                        <th>브랜드</th>
+                        <th>상품명</th>
+                        <th>가격</th>
+                    </tr>
+                </thead>
+                <tbody id="data-table">
+                    <!-- 데이터 테이블 -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        <li class="page-item disabled">
+          <a class="page-link" href="#" aria-label="Previous" style="color: black;">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <li class="page-item"><a class="page-link" href="index.html" style="color: black;">1</a></li>
+        <li class="page-item"><a class="page-link" href="index2.html" style="color: black;">2</a></li>
+        <li class="page-item"><a class="page-link" href="index3.html" style="color: black;">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Next" style="color: black;">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <script src="index.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>
