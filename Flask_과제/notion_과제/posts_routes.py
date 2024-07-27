@@ -71,7 +71,7 @@ def create_posts_blueprint(mysql):
             content = request.json.get("content")
 
             if not title or not content:
-                abort(400, message="title 또는 content가 없습니다.")
+                abort(400, message="No title or content.")
 
             sql = "SELECT * FROM posts WHERE id=%s"
             cursor.execute(sql, (id,))
@@ -92,7 +92,7 @@ def create_posts_blueprint(mysql):
             post = cursor.fetchone()
 
             if not post:
-                abort(404, message="해당 게시글이 없습니다.")
+                abort(404, message="There are no such posts.")
 
             sql = "DELETE FROM posts WHERE id=%s"
             cursor.execute(sql, (id,))
