@@ -34,8 +34,6 @@ def manage_boards():
 def manage_users():
     return render_template('users.html')
 
-
-
 if __name__ == '__main__' :
     with app.app_context():
         db.create_all()
