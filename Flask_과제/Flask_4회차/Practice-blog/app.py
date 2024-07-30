@@ -1,12 +1,16 @@
-from flask import Flask, render_template, redirect, url_for, request
+from flask import Flask, request, render_template, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__)
 
 # Configure database
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://username:password@localhost/restaurant'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URI')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
 db = SQLAlchemy(app)
 
 class Reservation(db.Model):
@@ -24,7 +28,6 @@ class Reservation(db.Model):
 def create_tables():
     db.create_all()
 
-# Home route to show reservations and a form to add new ones
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
@@ -43,4 +46,6 @@ def index():
         return render_template('index.html', reservations=all_reservations)
 
 if __name__ == '__main__':
+    with app.app_context():
+        create_tables()
     app.run(debug=True)
